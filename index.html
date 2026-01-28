@@ -1,249 +1,321 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Seg - Soluções em Código Aberto</title>
+    <meta name="description" content="Compartilhamos conhecimento e soluções com Código Aberto. Desenvolvimento de apps e segurança.">
+    
+    <!-- Tailwind CSS (Framework de Estilo) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fontes Google (Inter e JetBrains Mono) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="pt-BR">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>IA Seg - Solu\'e7\'f5es em C\'f3digo Aberto</title>\
-    <meta name="description" content="Compartilhamos conhecimento e solu\'e7\'f5es com C\'f3digo Aberto. Desenvolvimento de apps e seguran\'e7a.">\
-    \
-    <!-- Tailwind CSS (Framework de Estilo) -->\
-    <script src="https://cdn.tailwindcss.com"></script>\
-    \
-    <!-- FontAwesome (\'cdcones) -->\
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">\
-    \
-    <!-- Fontes Google (Inter e JetBrains Mono) -->\
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">\
-\
-    <!-- Configura\'e7\'e3o de Cores Personalizadas baseadas no Logo -->\
-    <script>\
-        tailwind.config = \{\
-            theme: \{\
-                extend: \{\
-                    colors: \{\
-                        'ia-dark': '#1a1a1a',      // Fundo escuro principal\
-                        'ia-silver': '#e0e0e0',    // Texto met\'e1lico claro\
-                        'ia-green': '#39ff14',     // Verde Neon/Radar\
-                        'ia-green-dim': '#2ecc71', // Verde secund\'e1rio\
-                        'ia-card': '#252525',      // Fundo dos cart\'f5es\
-                    \},\
-                    fontFamily: \{\
-                        sans: ['Inter', 'sans-serif'],\
-                        mono: ['JetBrains Mono', 'monospace'],\
-                    \},\
-                    animation: \{\
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',\
-                        'float': 'float 6s ease-in-out infinite',\
-                    \},\
-                    keyframes: \{\
-                        float: \{\
-                            '0%, 100%': \{ transform: 'translateY(0)' \},\
-                            '50%': \{ transform: 'translateY(-10px)' \},\
-                        \}\
-                    \}\
-                \}\
-            \}\
-        \}\
-    </script>\
-\
-    <style>\
-        /* Efeitos visuais adicionais */\
-        body \{\
-            background-color: #0f0f0f;\
-            background-image: radial-gradient(circle at 50% 0%, #1f2937 0%, #0f0f0f 70%);\
-            color: #e0e0e0;\
-        \}\
-        \
-        .radar-glow \{\
-            box-shadow: 0 0 40px -10px rgba(57, 255, 20, 0.3);\
-        \}\
-\
-        .card-hovering \{\
-            transition: all 0.3s ease;\
-        \}\
-        \
-        .card-hovering:hover \{\
-            transform: translateY(-5px);\
-            box-shadow: 0 10px 30px -10px rgba(57, 255, 20, 0.2);\
-            border-color: #39ff14;\
-        \}\
-    </style>\
-</head>\
-<body class="flex flex-col min-h-screen">\
-\
-    <!-- Navega\'e7\'e3o -->\
-    <nav class="w-full py-6 px-4 md:px-8 border-b border-gray-800 bg-opacity-90 backdrop-blur-md sticky top-0 z-50 bg-[#0f0f0f]">\
-        <div class="max-w-7xl mx-auto flex justify-between items-center">\
-            <div class="flex items-center gap-3">\
-                <!-- Logo Pequeno -->\
-                <img src="ia_logo_512.png" alt="IA Seg Logo" class="h-10 w-10 rounded-full radar-glow">\
-                <span class="text-xl font-bold tracking-tight text-white">IA<span class="text-ia-green">.SEG</span></span>\
-            </div>\
-            \
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">\
-                <a href="#projects" class="hover:text-ia-green transition-colors">Projetos</a>\
-                <a href="#about" class="hover:text-ia-green transition-colors">Sobre</a>\
-                <a href="https://github.com/ia-seg" target="_blank" class="text-white bg-white/10 px-4 py-2 rounded-full hover:bg-ia-green hover:text-black transition-all">\
-                    <i class="fab fa-github mr-2"></i> GitHub\
-                </a>\
-            </div>\
-            \
-            <!-- Mobile Menu Button (apenas visual para este exemplo) -->\
-            <button class="md:hidden text-gray-300">\
-                <i class="fas fa-bars text-xl"></i>\
-            </button>\
-        </div>\
-    </nav>\
-\
-    <!-- Hero Section -->\
-    <header class="flex-grow flex items-center justify-center py-20 px-4 relative overflow-hidden">\
-        <!-- Elemento decorativo de fundo -->\
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-ia-green opacity-5 rounded-full blur-[100px] pointer-events-none"></div>\
-\
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">\
-            <!-- Texto Hero -->\
-            <div class="space-y-6 text-center md:text-left animate-fade-in-up">\
-                <div class="inline-block px-3 py-1 rounded-full border border-gray-700 bg-gray-900/50 text-xs font-mono text-ia-green mb-2">\
-                    Open Source Development\
-                </div>\
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight">\
-                    Seguran\'e7a e Inova\'e7\'e3o em <span class="text-transparent bg-clip-text bg-gradient-to-r from-ia-green to-emerald-600">C\'f3digo Aberto</span>\
-                </h1>\
-                <p class="text-xl text-gray-400 font-light">\
-                    "Compartilhamos conhecimento e solu\'e7\'f5es com C\'f3digo Aberto."\
-                </p>\
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">\
-                    <a href="#projects" class="px-8 py-3 bg-ia-green text-black font-bold rounded-lg hover:bg-white transition-colors shadow-[0_0_20px_rgba(57,255,20,0.3)]">\
-                        Ver Aplicativos\
-                    </a>\
-                    <a href="https://github.com/ia-seg" target="_blank" class="px-8 py-3 border border-gray-600 rounded-lg hover:border-ia-green hover:text-ia-green transition-colors">\
-                        Perfil GitHub\
-                    </a>\
-                </div>\
-            </div>\
-\
-            <!-- Imagem Hero (Logo) -->\
-            <div class="flex justify-center animate-float">\
-                <div class="relative">\
-                    <div class="absolute inset-0 bg-ia-green rounded-full blur-2xl opacity-20"></div>\
-                    <img src="ia_logo_512.png" alt="IA Seg Logo Grande" class="w-64 h-64 md:w-80 md:h-80 object-contain relative z-10 drop-shadow-2xl">\
-                    \
-                    <!-- An\'e9is decorativos de "Radar" CSS -->\
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-ia-green/20 rounded-full animate-pulse-slow"></div>\
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-ia-green/10 rounded-full"></div>\
-                </div>\
-            </div>\
-        </div>\
-    </header>\
-\
-    <!-- Projetos Section -->\
-    <section id="projects" class="py-20 px-4 bg-[#141414]">\
-        <div class="max-w-7xl mx-auto">\
-            <div class="text-center mb-16">\
-                <h2 class="text-3xl font-bold mb-4">Nossos Reposit\'f3rios</h2>\
-                <div class="w-20 h-1 bg-ia-green mx-auto rounded-full"></div>\
-                <p class="mt-4 text-gray-400">Ferramentas desenvolvidas para a comunidade.</p>\
-            </div>\
-\
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">\
-                \
-                <!-- Card 1: Bunker -->\
-                <a href="https://github.com/ia-seg/Bunker" target="_blank" class="block group">\
-                    <div class="bg-ia-card border border-gray-800 rounded-xl p-6 h-full flex flex-col card-hovering group-hover:border-ia-green/50">\
-                        <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-ia-green group-hover:bg-ia-green group-hover:text-black transition-colors">\
-                            <i class="fas fa-shield-alt text-2xl"></i>\
-                        </div>\
-                        <h3 class="text-xl font-bold mb-2 text-white">Bunker</h3>\
-                        <p class="text-gray-400 text-sm flex-grow">\
-                            Solu\'e7\'e3o robusta para prote\'e7\'e3o de dados sens\'edveis. Um cofre digital seguro para suas informa\'e7\'f5es cr\'edticas.\
-                        </p>\
-                        <div class="mt-4 flex items-center text-xs font-mono text-gray-500">\
-                            <span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span> C++ / Qt\
-                        </div>\
-                    </div>\
-                </a>\
-\
-                <!-- Card 2: Comercial B\'e1sico -->\
-                <a href="https://github.com/ia-seg/Comercial-Basico" target="_blank" class="block group">\
-                    <div class="bg-ia-card border border-gray-800 rounded-xl p-6 h-full flex flex-col card-hovering group-hover:border-ia-green/50">\
-                        <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-ia-green group-hover:bg-ia-green group-hover:text-black transition-colors">\
-                            <i class="fas fa-store text-2xl"></i>\
-                        </div>\
-                        <h3 class="text-xl font-bold mb-2 text-white">Comercial B\'e1sico</h3>\
-                        <p class="text-gray-400 text-sm flex-grow">\
-                            Gest\'e3o essencial para o dia a dia. Controle simples e eficiente para pequenos com\'e9rcios e neg\'f3cios.\
-                        </p>\
-                        <div class="mt-4 flex items-center text-xs font-mono text-gray-500">\
-                            <span class="w-2 h-2 rounded-full bg-yellow-500 mr-2"></span> Python\
-                        </div>\
-                    </div>\
-                </a>\
-\
-                <!-- Card 3: Comercial B\'e1sico Mac -->\
-                <a href="https://github.com/ia-seg/Comercial-Basico-Mac" target="_blank" class="block group">\
-                    <div class="bg-ia-card border border-gray-800 rounded-xl p-6 h-full flex flex-col card-hovering group-hover:border-ia-green/50">\
-                        <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-ia-green group-hover:bg-ia-green group-hover:text-black transition-colors">\
-                            <i class="fab fa-apple text-2xl"></i>\
-                        </div>\
-                        <h3 class="text-xl font-bold mb-2 text-white">Comercial B\'e1sico <span class="text-xs align-top opacity-70">Mac</span></h3>\
-                        <p class="text-gray-400 text-sm flex-grow">\
-                            A vers\'e3o otimizada do sistema comercial nativo para o ecossistema Apple macOS. Performance e integra\'e7\'e3o.\
-                        </p>\
-                        <div class="mt-4 flex items-center text-xs font-mono text-gray-500">\
-                            <span class="w-2 h-2 rounded-full bg-purple-500 mr-2"></span> Swift / Obj-C\
-                        </div>\
-                    </div>\
-                </a>\
-\
-                <!-- Card 4: Assinaturas -->\
-                <a href="https://github.com/ia-seg/Assinaturas" target="_blank" class="block group">\
-                    <div class="bg-ia-card border border-gray-800 rounded-xl p-6 h-full flex flex-col card-hovering group-hover:border-ia-green/50">\
-                        <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-ia-green group-hover:bg-ia-green group-hover:text-black transition-colors">\
-                            <i class="fas fa-file-signature text-2xl"></i>\
-                        </div>\
-                        <h3 class="text-xl font-bold mb-2 text-white">Assinaturas</h3>\
-                        <p class="text-gray-400 text-sm flex-grow">\
-                            Gerenciador de assinaturas digitais e autentica\'e7\'e3o de documentos. Seguran\'e7a e validade jur\'eddica simplificada.\
-                        </p>\
-                        <div class="mt-4 flex items-center text-xs font-mono text-gray-500">\
-                            <span class="w-2 h-2 rounded-full bg-red-500 mr-2"></span> Java\
-                        </div>\
-                    </div>\
-                </a>\
-\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- Footer -->\
-    <footer class="bg-black py-8 border-t border-gray-900">\
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">\
-            <div class="flex items-center gap-2">\
-                <img src="ia_logo_512.png" alt="IA Seg" class="h-6 w-6 grayscale hover:grayscale-0 transition-all">\
-                <span class="text-sm text-gray-500">\'a9 2024 IA Seg. Todos os direitos reservados.</span>\
-            </div>\
-            \
-            <div class="flex gap-6">\
-                <a href="https://github.com/ia-seg" class="text-gray-500 hover:text-ia-green transition-colors">\
-                    <i class="fab fa-github text-xl"></i>\
-                </a>\
-                <a href="mailto:contato@ia.seg.br" class="text-gray-500 hover:text-ia-green transition-colors">\
-                    <i class="fas fa-envelope text-xl"></i>\
-                </a>\
-            </div>\
-            \
-            <div class="text-xs text-gray-600 font-mono">\
-                ia.seg.br\
-            </div>\
-        </div>\
-    </footer>\
-\
-</body>\
-</html>}
+    <!-- Configuração de Cores Personalizadas baseadas no Logo -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ia-dark': '#1a1a1a',      // Fundo escuro principal
+                        'ia-silver': '#e0e0e0',    // Texto metálico claro
+                        'ia-green': '#39ff14',     // Verde Neon/Radar
+                        'ia-green-dim': '#2ecc71', // Verde secundário
+                        'ia-card': '#252525',      // Fundo dos cartões
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Efeitos visuais adicionais */
+        body {
+            background-color: #0f0f0f;
+            background-image: radial-gradient(circle at 50% 0%, #1f2937 0%, #0f0f0f 70%);
+            color: #e0e0e0;
+        }
+        
+        .radar-glow {
+            box-shadow: 0 0 40px -10px rgba(57, 255, 20, 0.3);
+        }
+
+        .card-hovering {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hovering:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(57, 255, 20, 0.2);
+            border-color: #39ff14;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navegação -->
+    <nav class="w-full py-6 px-4 md:px-8 border-b border-gray-800 bg-opacity-90 backdrop-blur-md sticky top-0 z-50 bg-[#0f0f0f]">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- Logo Pequeno -->
+                <img src="ia_logo_512.png" alt="IA Seg Logo" class="h-10 w-10 rounded-full radar-glow">
+                <span class="text-xl font-bold tracking-tight text-white">IA<span class="text-ia-green">.SEG</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#projects" class="hover:text-ia-green transition-colors">Projetos</a>
+                <a href="#about" class="hover:text-ia-green transition-colors">Sobre</a>
+                <a href="https://github.com/ia-seg" target="_blank" class="text-white bg-white/10 px-4 py-2 rounded-full hover:bg-ia-green hover:text-black transition-all">
+                    <i class="fab fa-github mr-2"></i> GitHub
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button (apenas visual para este exemplo) -->
+            <button class="md:hidden text-gray-300">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="flex-grow flex items-center justify-center py-20 px-4 relative overflow-hidden">
+        <!-- Elemento decorativo de fundo -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-ia-green opacity-5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Texto Hero -->
+            <div class="space-y-6 text-center md:text-left animate-fade-in-up">
+                <div class="inline-block px-3 py-1 rounded-full border border-gray-700 bg-gray-900/50 text-xs font-mono text-ia-green mb-2">
+                    Open Source Development
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    Segurança e Inovação em <span class="text-transparent bg-clip-text bg-gradient-to-r from-ia-green to-emerald-600">Código Aberto</span>
+                </h1>
+                <p class="text-xl text-gray-400 font-light">
+                    "Compartilhamos conhecimento e soluções com Código Aberto."
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+                    <a href="#projects" class="px-8 py-3 bg-ia-green text-black font-bold rounded-lg hover:bg-white transition-colors shadow-[0_0_20px_rgba(57,255,20,0.3)]">
+                        Ver Aplicativos
+                    </a>
+                    <a href="https://github.com/ia-seg" target="_blank" class="px-8 py-3 border border-gray-600 rounded-lg hover:border-ia-green hover:text-ia-green transition-colors">
+                        Perfil GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Imagem Hero (Logo) -->
+            <div class="flex justify-center animate-float">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-ia-green rounded-full blur-2xl opacity-20"></div>
+                    <img src="ia_logo_512.png" alt="IA Seg Logo Grande" class="w-64 h-64 md:w-80 md:h-80 object-contain relative z-10 drop-shadow-2xl">
+                    
+                    <!-- Anéis decorativos de "Radar" CSS -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-ia-green/20 rounded-full animate-pulse-slow"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-ia-green/10 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projetos Section -->
+    <section id="projects" class="py-20 px-4 bg-[#141414]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Nossos Repositórios</h2>
+                <div class="w-20 h-1 bg-ia-green mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">Ferramentas desenvolvidas para a comunidade.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1: Bunker -->
+                <a href="https://github.com/ia-seg/Bunker" target="_blank" class="block group">
+                    <div class="bg-ia-card border border-gray-800 rounded-xl p-6 h-full flex flex-col card-hovering group-hover:border-ia-green/50">
+                        <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-ia-green group-hover:bg-ia-green group-hover:text-black transition-colors">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Bunker</h3>
+                        <p class="text-gray-400 text-sm flex-grow">
+                            Bunker é uma aplicação para controle dos recursos em abrigos e reservas operacionais de preparadores. Este software é gratuito para uso por pessoas e organizações, não coletando nenhum dado dos usuários ou requerendo qualquer registro.
+                        </p>
+                        <div class="mt-4 flex items-center text-xs font-mono text-gray-500">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span> Pascal
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2: Comercial Básico -->
+                <a href="https://github.com/ia-seg/Comercial-Basico" target="_blank" class="block group">
+                    <div class="bg-ia-card border border-gray-800 rounded-xl p-6 h-full flex flex-col card-hovering group-hover:border-ia-green/50">
+                        <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-ia-green group-hover:bg-ia-green group-hover:text-black transition-colors">
+                            <i class="fas fa-store text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Comercial Básico</h3>
+                        <p class="text-gray-400 text-sm flex-grow">
+                            Esta aplicação é para você que está trabalhando com vendas ou vai iniciar um comércio e precisa de um banco de dados em seu computador. Comercial Básico é um aplicativo leve, capaz de rodar em qualquer computador, sem requesitos adicionais.
+                        </p>
+                        <div class="mt-4 flex items-center text-xs font-mono text-gray-500">
+                            <span class="w-2 h-2 rounded-full bg-yellow-500 mr-2"></span> Pascal
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3: Comercial Básico Mac -->
+                <a href="https://github.com/ia-seg/Comercial-Basico-Mac" target="_blank" class="block group">
+                    <div class="bg-ia-card border border-gray-800 rounded-xl p-6 h-full flex flex-col card-hovering group-hover:border-ia-green/50">
+                        <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-ia-green group-hover:bg-ia-green group-hover:text-black transition-colors">
+                            <i class="fab fa-apple text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Comercial Básico <span class="text-xs align-top opacity-70">Mac</span></h3>
+                        <p class="text-gray-400 text-sm flex-grow">
+                            Esta aplicação é para você que está trabalhando com vendas ou vai iniciar um comércio e precisa de um banco de dados em seu Mac. Comercial Básico é um aplicativo leve, capaz de rodar em qualquer Mac, sem requesitos adicionais.
+                        </p>
+                        <div class="mt-4 flex items-center text-xs font-mono text-gray-500">
+                            <span class="w-2 h-2 rounded-full bg-purple-500 mr-2"></span> Pascal
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 4: Assinaturas -->
+                <a href="https://github.com/ia-seg/Assinaturas" target="_blank" class="block group">
+                    <div class="bg-ia-card border border-gray-800 rounded-xl p-6 h-full flex flex-col card-hovering group-hover:border-ia-green/50">
+                        <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-ia-green group-hover:bg-ia-green group-hover:text-black transition-colors">
+                            <i class="fas fa-file-signature text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Assinaturas</h3>
+                        <p class="text-gray-400 text-sm flex-grow">
+                            Uma solução para você gerir os dados de acesso às suas assinaturas ou mensalidades em sites, serviços de Streaming, aplicativos, aluguéis ou em qualquer outro tipo de assinatura.
+                        </p>
+                        <div class="mt-4 flex items-center text-xs font-mono text-gray-500">
+                            <span class="w-2 h-2 rounded-full bg-red-500 mr-2"></span> Pascal
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+       <!-- Sobre Section (NOVA) -->
+    <section id="about" class="py-24 px-4 relative overflow-hidden bg-[#0a0a0a]">
+        <!-- Background Decoration -->
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-ia-green/5 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            
+            <!-- Coluna Texto -->
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-history text-ia-green"></i>
+                        História & Motivações
+                    </h2>
+                    <div class="prose prose-invert prose-lg text-gray-400 leading-relaxed">
+                        <p class="mb-4">
+                            Sejam bem vindos! Somos a <strong class="text-white">ia.seg.br</strong>, fonte de conteúdo livre.
+                        </p>
+                        <p class="mb-4">
+                            Começamos esta jornada desenvolvendo software de código aberto, que estão disponíveis aqui no site para download gratuito.
+                        </p>
+                        <p class="mb-4">
+                            Hoje, complementamos o portal ia.seg.br com informação e entretenimento, através de nossos canais nas redes sociais:
+                        </p>
+                        
+                        <!-- Social Links Inline -->
+                        <div class="flex gap-4 mt-6 flex-wrap">
+                            <a href="https://www.youtube.com/@iasegbr" target="_blank" class="flex items-center gap-2 text-sm bg-gray-800 px-3 py-1.5 rounded-full hover:bg-red-600 hover:text-white transition-colors">
+                                <i class="fab fa-youtube"></i> Youtube
+                            </a>
+                            <a href="https://www.tiktok.com/@iasegbr" target="_blank" class="flex items-center gap-2 text-sm bg-gray-800 px-3 py-1.5 rounded-full hover:bg-gray-700 hover:text-white transition-colors">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://twitter.com/iasegbr" target="_blank" class="flex items-center gap-2 text-sm bg-gray-800 px-3 py-1.5 rounded-full hover:bg-blue-400 hover:text-white transition-colors">
+                                <i class="fab fa-twitter"></i> X
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-800">
+                     <p class="text-sm text-gray-500 mb-2">Deseja participar?</p>
+                     <a href="mailto:iasegbr@gmail.com" class="inline-flex items-center text-ia-green hover:underline">
+                        <i class="fas fa-envelope mr-2"></i> Propor colaboração ou parceria
+                     </a>
+                </div>
+            </div>
+
+            <!-- Coluna Apoio/Doação -->
+            <div class="bg-ia-card/50 border border-gray-800 rounded-2xl p-8 lg:p-10 relative overflow-hidden">
+                <!-- Brilho de fundo -->
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-ia-green/10 rounded-full blur-3xl"></div>
+
+                <h3 class="text-2xl font-bold mb-4 text-white">Livres & Independentes</h3>
+                <p class="text-gray-400 mb-8">
+                    Seu suporte garante a amplitude do projeto, tornando os aplicativos de código aberto e as informações acessíveis a cada vez mais pessoas. Podemos contar com a sua doação hoje?
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+
+                    <!-- Botão Apoia.se -->
+                    <a href="https://apoia.se/ia_seg_br" target="_blank" class="group relative overflow-hidden bg-[#ef4045] hover:bg-[#d63439] rounded-xl p-6 text-white transition-all duration-300 hover:-translate-y-1 shadow-lg block sm:col-span-2 mx-auto">
+                        <div class="flex flex-col items-center text-center">
+                            <i class="fas fa-heart text-3xl mb-3 opacity-90"></i>
+                            <span class="font-bold">Apoia.se</span>
+                            <span class="text-xs opacity-75 mt-1">Seja um apoiador</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <p class="text-center text-xs text-gray-600 mt-6">
+                    Agradecemos pela confiança e fidelidade.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <img src="ia_logo_512.png" alt="IA Seg" class="h-6 w-6 grayscale hover:grayscale-0 transition-all">
+                <span class="text-sm text-gray-500">© 2026 IA.SEG.BR Todos os direitos reservados.</span>
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="https://github.com/ia-seg" class="text-gray-500 hover:text-ia-green transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="mailto:iasegbr@gmail.com" class="text-gray-500 hover:text-ia-green transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+            </div>
+            
+            <div class="text-xs text-gray-600 font-mono">
+                ia.seg.br
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
